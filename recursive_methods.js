@@ -1,17 +1,9 @@
-let teamRange = (a, b) => {
-  var total = a, team = a;
-
-  while (team++ < b) { total *= team; }
-  return total;
-}
-
 let choose_team = (n, k) => {
-  if (n == k) {
-    return 1;
-  } else {
-    k = (k < n-k) ? n-k : k;
-    return teamRange(k+1, n)/teamRange(1,n-k);
-  }
+    if(k === n || k === 0 || n === 0){
+      return 1
+    }else{
+      return choose_team(n-1, k-1) + choose_team(n-1, k)
+    }
 }
 
 console.log(choose_team(6, 2)); // 15
