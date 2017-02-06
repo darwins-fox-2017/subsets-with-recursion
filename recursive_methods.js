@@ -1,7 +1,7 @@
 let choose_team = (n, k) => {
-    if(k === n || k === 0 || n === 0){
+    if(n === k || k === 0 || n === 0){
       return 1
-    }else{
+    } else {
       return choose_team(n-1, k-1) + choose_team(n-1, k)
     }
 }
